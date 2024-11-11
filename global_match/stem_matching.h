@@ -62,9 +62,11 @@ public:
     void
     estimateTransformation(Eigen::Matrix4f& transform);
 
-    inline size_t
+    // size_t 是一个无符号整数类型，通常用于表示对象的大小或数组中的元素数量。
+    // 在这个上下文中，它用于表示匹配的数量。
+    inline size_t 
     getNumberOfMatches() {
-        return stem_matches_.size();
+        return stem_matches_.size(); // 顶层容器的元素数量
     };
 
     // TODO: add setters and getters
@@ -77,7 +79,7 @@ private:
     typedef std::vector<VertexSide> Triangle;
 
     // 成员函数后面的const关键字表示该成员函数是一个常量成员函数（const member function）
-    // 函数末尾的 const 表示该函数不会修改当前对象的任何 成员变量。
+    // 函数末尾的 const 表示该函数不会修改当前对象的任何成员变量。
     void
     constructTriangles(const Cloud3D::ConstPtr& stem_positions,
                        std::vector<Triangle>& triangles) const;

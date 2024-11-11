@@ -79,9 +79,11 @@ main(int argc, char** argv) {                         // console parse, char** a
     std::cout << "Target filename: " << filename_target << std::endl;
     std::cout << "Result filename: " << filename_result << std::endl;
 
-    Cloud3D::Ptr cloud_src(new Cloud3D), cloud_tgt(new Cloud3D); // "Cloud3D" defined in common.h; cloud_src: pointer; new Cloud3D: instance object
+    // "Cloud3D" defined in common.h; cloud_src: pointer; new Cloud3D: instance object
+    // typedef pcl::PointCloud <Point3D> Cloud3D;
+    Cloud3D::Ptr cloud_src(new Cloud3D), cloud_tgt(new Cloud3D); 
     tic = omp_get_wtime(); // _OPENMP
-    pcl::io::loadPLYFile<Point3D>(filename_source, *cloud_src);
+    pcl::io::loadPLYFile<Point3D>(filename_source, *cloud_src); // 必须是ply格式？
     toc = omp_get_wtime();
     print_info("  (1) ");
     print_value("%d", cloud_src->size()); // %d: int
