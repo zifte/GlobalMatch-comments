@@ -37,11 +37,11 @@
 #include <pcl/common/distances.h>
 #include <pcl/PolygonMesh.h>
 #include <pcl/registration/transformation_estimation_2D.h>
-#include <algorithm>
-#include <vector>
-#include <set>
-#include <fstream>
-#include <numeric>
+#include <algorithm> // 这个头文件包含了各种算法的实现，比如排序（std::sort）、查找（std::find）、变换（std::transform）、填充（std::fill）等。这些算法通常用于操作容器中的元素。
+#include <vector> // std::vector是一个动态数组，能够在运行时动态地增加或减少元素。它提供了随机访问迭代器，允许在常数时间内访问任何元素。
+#include <set> // std::set是一个有序集合，它自动对其元素进行排序，并且不允许重复元素。std::set基于红黑树实现，提供了快速的查找、插入和删除操作。
+#include <fstream> // 这个头文件包含了文件输入/输出（I/O）的类，比如std::ifstream（用于从文件读取数据）和std::ofstream（用于向文件写入数据）。这些类提供了对文件的基本读写操作。
+#include <numeric> // 这个头文件包含了一些数值算法，比如部分和（std::accumulate）、相邻差（std::adjacent_difference）等。这些算法通常用于对容器中的元素进行数值计算。
 
 class Matching {
 public:
